@@ -18,10 +18,6 @@ public class Counter {
 	synchronized void sum(int v) throws InterruptedException {
 		if ((v < 0 && count <= 0) || (v > 0 && count >= 3)) return; 
 		count += v;
-		this.print();		
-	}
-	
-	synchronized void print() {
-		System.out.println(count);
+		System.out.println(count);	
 	}
 }
