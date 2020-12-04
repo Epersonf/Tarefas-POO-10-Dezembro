@@ -16,7 +16,7 @@ public class Counter {
 	}
 	
 	synchronized void sum(int v) throws InterruptedException {
-		while ((v < 0 && count <= 0) || (v > 0 && count >= 3)) return; 
+		if ((v < 0 && count <= 0) || (v > 0 && count >= 3)) return; 
 		count += v;
 		this.print();		
 	}
