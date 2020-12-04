@@ -1,0 +1,27 @@
+package me.br.eperson.uff.ex2;
+
+public class Counter {
+	private int count;
+	
+	public Counter() {
+		this.count = 0;
+	}
+	
+	synchronized void increment() throws InterruptedException {
+		sum(1);
+	}
+	
+	synchronized void decrement() throws InterruptedException {
+		sum(-1);
+	}
+	
+	synchronized void sum(int v) throws InterruptedException {
+		while ((v < 0 && count <= 0) || (v > 0 && count >= 3)) return; 
+		count += v;
+		this.print();		
+	}
+	
+	synchronized void print() {
+		System.out.println(count);
+	}
+}
